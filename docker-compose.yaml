@@ -59,7 +59,7 @@ services:
     working_dir: /app
     environment:
       WEB_DOCUMENT_ROOT: /app/public
-    command: bash -c "php artisan migrate:fresh && php artisan db:seed
+    command: bash -c "php artisan migrate:fresh && php artisan db:seed"
     depends_on:
       - db
     networks:

@@ -13,7 +13,12 @@ key: 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
 - launch
    
 docker-compose up -d
+
+## docker-profiles
+
 docker-compose run amaia-npm
+docker-compose run amaia-composer
+docker-compose run amaia-migrate
 
 # Laravel
 
