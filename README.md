@@ -1,6 +1,3 @@
-# gelditu apache
-sudo apachectl stop
-
 # git
 
 https://github.com/amaiagalvez/amaia.git
@@ -33,9 +30,13 @@ laravel new --jet amaia
 
 - config/app.php => Lenguaje
 - config/database.php => strict: false
+- config/loggin =>  daily
 
 - debugbar: https://github.com/barryvdh/laravel-debugbar
 
+# Stubs
+
+php artisan stub:publish
 
 # Soinua
 
