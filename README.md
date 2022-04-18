@@ -35,3 +35,8 @@ laravel new --jet amaia
 - config/database.php => strict: false
 
 - debugbar: https://github.com/barryvdh/laravel-debugbar
+
+
+# Soinua
+
+pavucontrol
