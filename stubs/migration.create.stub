@@ -29,19 +29,19 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->foreignId('created_by')
-                ->nullabe()
+                ->nullable()
                 ->constrained('users')
                 ->restrictOnDelete()
                 ->restrictOnUpdate();
 
-            $table->foreignId('update_by')
-                ->nullabe()
+            $table->foreignId('updated_by')
+                ->nullable()
                 ->constrained('users')
                 ->restrictOnDelete()
                 ->restrictOnUpdate();
 
             $table->foreignId('deleted_by')
-                ->nullabe()
+                ->nullable()
                 ->constrained('users')
                 ->restrictOnDelete()
                 ->restrictOnUpdate();

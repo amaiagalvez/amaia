@@ -40,10 +40,15 @@ laravel new --jet amaia
 
 # Stubs
 
-php artisan stub:publish
+    php artisan stub:publish
 
 # Components
 
+    php artisan make:command xxxxx
+
+# New object
+
+    php artisan make:allfiles -mcrfswtdz xxxxxx
 
 # Soinua
 
