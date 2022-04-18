@@ -50,6 +50,19 @@ services:
     networks:
       - frontend
 
+  amaia-npmdev:
+    image: node:${DC_NODE:-17-bullseye}
+    profiles: [ "npm" ]
+    volumes:
+      - ./:/app
+      - ${HOME}/Webguneak/dc-data/home:/home/application
+    working_dir: /app
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public
+    command: bash -c "rm -rf public/css && rm -rf public/js && npm run dev"
+    networks:
+      - frontend
+
   amaia-migrate:
     image: webdevops/php-apache-dev:${DC_PHP:-8.0}
     profiles: [ "migrate" ]

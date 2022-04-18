@@ -6,7 +6,7 @@ key: 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
 
 ## deshacer ultimo commit 
     git reset --soft HEAD~1
-    
+
 # docker
 
 - docker-compose
@@ -16,6 +16,7 @@ docker-compose up -d
 
 ## docker-profiles
 
+docker-compose run amaia-npmdev
 docker-compose run amaia-npm
 docker-compose run amaia-composer
 docker-compose run amaia-migrate
@@ -40,6 +41,9 @@ laravel new --jet amaia
 # Stubs
 
 php artisan stub:publish
+
+# Components
+
 
 # Soinua
 
