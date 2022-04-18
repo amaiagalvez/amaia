@@ -4,6 +4,9 @@ https://github.com/amaiagalvez/amaia.git
 
 key: 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
 
+## deshacer ultimo commit 
+    git reset --soft HEAD~1
+    
 # docker
 
 - docker-compose
