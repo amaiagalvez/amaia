@@ -47,7 +47,7 @@ class MakeViewCommand extends GeneratorCommand
 
     public function handle()
     {
-        $view =  Str::studly($this->argument('name'));
+        $view =  Str::camel($this->argument('name'));
 
         $path = $this->viewPath($view) . '/index.blade.php';
 

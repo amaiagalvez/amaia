@@ -185,7 +185,7 @@ class MakeAllFilesCommand extends GeneratorCommand
      */
     protected function createView()
     {
-        $view = Str::studly(class_basename($this->argument('name')));
+        $view = Str::camel(class_basename($this->argument('name')));
 
         $this->call('make:view', [
             'name' => "{$view}",
