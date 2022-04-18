@@ -25,6 +25,7 @@ class NoteFactory extends Factory
         return [
             'name' => $this->faker->sentence(),
             'notes' => $this->faker->paragraph(2),
+            'tags' => ['1' => $this->faker->word(), '2' => $this->faker->word()],
             'created_by' => User::first()->id ??  User::factory(),
             'updated_by' => User::first()->id ??  User::factory(),
         ];

@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Casts\Tag;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class Note extends Model
@@ -28,7 +29,8 @@ class Note extends Model
      * @var array
      */
     protected $casts = [
-        'active' => 'boolean'
+        'active' => 'boolean',
+        'tags' => Tag::class
     ];
 
     /**

@@ -19,7 +19,7 @@
 
     @if ($hasTags)
         <div class="py-4">
-            @foreach ($tags as $tag)
+            @foreach ($tags as $key => $tag)
                 <a href="#">
                     <span class="inline-block bg-gray-200 rounded-full px-3 py-1">
                         #{{ $tag }}

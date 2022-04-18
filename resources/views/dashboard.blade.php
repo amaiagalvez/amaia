@@ -18,7 +18,7 @@
             <div class="flex flex-wrap -m-4">
 
                 @foreach ($notes as $note)
-                    <x-card class="" :tags="['tag1', 'tag2']">
+                    <x-card class="" :tags="$note->tags">
                         <x-slot name="title">
                             <h2 class="text-xl">{{ $note->name }}</h2>
                         </x-slot>

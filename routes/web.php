@@ -26,9 +26,10 @@ Route::middleware([
 
 
     Route::get('/dashboard', function () {
+
         $notes = Note::take(1)->get();
 
         return view('dashboard', ['notes' => $notes]);
-
+        
     })->name('dashboard');
 });
