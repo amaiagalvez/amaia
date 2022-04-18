@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Note;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -22,19 +23,23 @@ class DatabaseSeeder extends Seeder
 
         User::truncate();
         Team::truncate();
+        Note::truncate();
 
         Schema::enableForeignKeyConstraints();
 
-        $user = User::factory()->create(
-            [
-                'name' => 'Amaia',
-                'email' => 'info@amaia.eus',
-                'email_verified_at' => now(),
-                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'remember_token' => Str::random(10),
-                'current_team_id' => 1
-            ]
-        );
+        //INFO: 1. has eta ondoren create
+
+        $user = User::factory()->has(Note::factory()->count(5), 'notes')
+            ->create(
+                [
+                    'name' => 'Amaia',
+                    'email' => 'info@amaia.eus',
+                    'email_verified_at' => now(),
+                    'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                    'remember_token' => Str::random(10),
+                    'current_team_id' => 1
+                ]
+            );
 
         $team = Team::factory()->create(
             [
@@ -42,5 +47,9 @@ class DatabaseSeeder extends Seeder
                 'name' => "Amaia's Team"
             ]
         );
+
+        $user = User::factory()->has(Note::factory()->count(5), 'notes')
+            ->count(10)
+            ->create();
     }
 }
