@@ -5,8 +5,10 @@ namespace Database\Seeders;
 use App\Models\Note;
 use App\Models\Team;
 use App\Models\User;
+use App\Models\Entity;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use App\Casts\AddressValueObject;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -51,5 +53,11 @@ class DatabaseSeeder extends Seeder
         $user = User::factory()->has(Note::factory()->count(5), 'notes')
             ->count(10)
             ->create();
+
+        $entities = Entity::factory()->count(10)->create();
+
+        $entity = Entity::first();
+        $entity->address = new AddressValueObject('C1', 'C2', 'C3', 'C4');
+        $entity->save();
     }
 }

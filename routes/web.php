@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Entity;
 use App\Models\Note;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,8 @@ Route::middleware([
 
         $notes = Note::take(1)->get();
 
-        return view('dashboard', ['notes' => $notes]);
-        
+        $entities = Entity::take(2)->get();
+
+        return view('dashboard', ['notes' => $notes, 'entities' => $entities]);
     })->name('dashboard');
 });

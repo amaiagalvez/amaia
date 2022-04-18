@@ -38,5 +38,17 @@
                 </x-card>
             </div>
         </div>
+    </section>
+
+    <section class="h-screen flex items-center justify-center my-auto text-gray-600 body-font">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="flex flex-wrap -m-4">
+
+                @foreach ($entities as $entity)
+                    <p> {{ $entity->name }} </p>
+                    <p> <br><br> {!! $entity->address->getFullAddress() !!} </p>
+                @endforeach
+            </div>
         </div>
+    </section>
 </x-app-layout>
