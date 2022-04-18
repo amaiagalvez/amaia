@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Note;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+
+
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $notes = Note::take(1)->get();
+
+        return view('dashboard', ['notes' => $notes]);
+
     })->name('dashboard');
 });

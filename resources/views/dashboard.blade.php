@@ -17,16 +17,14 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-wrap -m-4">
 
-                <x-card class="" :tags="['tag1', 'tag2']">
-                    <x-slot name="title">
-                        <h2 class="text-xl">Title</h2>
-                    </x-slot>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, non. Architecto
-                    consequatur impedit provident <strong>doloremque</strong> perferendis! Minima
-                    nam
-                    doloremque ad optio,
-                    vel delectus, aliquam dolorum natus tempore magnam omnis numquam?
-                </x-card>
+                @foreach ($notes as $note)
+                    <x-card class="" :tags="['tag1', 'tag2']">
+                        <x-slot name="title">
+                            <h2 class="text-xl">{{ $note->name }}</h2>
+                        </x-slot>
+                        {{ $note->notes }}
+                    </x-card>
+                @endforeach
 
                 <x-card class="lg:ml-2">
                     <x-slot name="title">
