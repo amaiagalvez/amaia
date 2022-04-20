@@ -34,4 +34,8 @@ Route::middleware([
 
         return view('dashboard', ['notes' => $notes, 'entities' => $entities]);
     })->name('dashboard');
+
+    Route::get('/tailwind', function () {
+        return view('tailwind');
+    })->name('tailwind');
 });

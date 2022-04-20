@@ -21,6 +21,8 @@ docker-compose run amaia-npm
 docker-compose run amaia-composer
 docker-compose run amaia-migrate
 
+ docker-compose run amaia-npm bash
+
 # Laravel
 
 https://laravel.com/docs/9.x#installation-via-composer
@@ -49,6 +51,11 @@ laravel new --jet amaia
 # New object
 
     php artisan make:allfiles -mcrfswtdz xxxxxx
+
+# TailwindCSS
+
+    npm install tailwindcss (laravel 9 --jet ya lo tiene)
+
 
 # Soinua
 
