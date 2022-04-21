@@ -21,9 +21,9 @@ class MakeAllFilesTest extends TestCase
             unlink($filename);
         }
         unlink(base_path('database/seeders/NameSeeder.php'));
-        unlink(base_path('resources/views/Name/index.blade.php'));
-        unlink(base_path('resources/views/Name/form.blade.php'));
-        rmdir(base_path('resources/views/Name'));
+        unlink(base_path('resources/views/name/index.blade.php'));
+        unlink(base_path('resources/views/name/form.blade.php'));
+        rmdir(base_path('resources/views/name'));
         unlink(base_path('resources/docs/1.0/name.md'));
         unlink(base_path('tests/Feature/Name/CreateTest.php'));
         unlink(base_path('tests/Feature/Name/StoreTest.php'));

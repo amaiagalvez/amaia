@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f75b9645fe2fce3777b11a65893573fa",
+    "content-hash": "411aff9bc3654e482d96874b0daffb81",
     "packages": [
         {
-            "name": "amaia/base",
+            "name": "amaiagalvez/base",
             "version": "1.0.0",
             "dist": {
                 "type": "path",
                 "url": "../packages/base",
-                "reference": "0fd0dffb7c51431903fb69609e2e7db2d9a22ef2"
+                "reference": "1a2af8e1e9f97fe3c1e080720d42e9eb9990b958"
             },
             "require-dev": {
                 "orchestra/canvas": "^7.1",

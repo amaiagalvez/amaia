@@ -13,8 +13,8 @@ class MakeViewTest extends TestCase
         $this->artisan('make:view name')->assertExitCode(0);
 
         //INFO: garbitu sotutako fitxategiak
-        unlink(base_path('resources/views/Name/index.blade.php'));
-        unlink(base_path('resources/views/Name/form.blade.php'));
-        rmdir(base_path('resources/views/Name'));
+        unlink(base_path('resources/views/name/index.blade.php'));
+        unlink(base_path('resources/views/name/form.blade.php'));
+        rmdir(base_path('resources/views/name'));
     }
 }
