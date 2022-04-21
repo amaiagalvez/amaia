@@ -1,7 +1,8 @@
 <?php
 
+use Amaia\Base\Models\Note;
 use App\Models\Entity;
-use App\Models\Note;
+use Amaia\Base\Facades\Calculator;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,4 +39,8 @@ Route::middleware([
     Route::get('/tailwind', function () {
         return view('tailwind');
     })->name('tailwind');
+
+    Route::get('/package', function () {
+        return config('base.name') . ' ' . Calculator::add(5)->subtract(10)->getResult();
+    })->name('package');
 });

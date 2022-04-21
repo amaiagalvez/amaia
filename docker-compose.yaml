@@ -6,7 +6,8 @@ services:
     user: "${DC_UID:-1000}:${DC_GID:-1000}"
     volumes:
       - ./:/app
-      - ${HOME}/Webguneak/dc-data/home:/home/application
+      - ${HOME}/Dokumentuak/Packages:/packages
+      - ${HOME}/Dokumentuak/dc-data/home:/home/application
     extra_hosts:
       - "host.docker.internal:host-gateway"
     working_dir: /app
@@ -29,7 +30,8 @@ services:
     profiles: [ "composer" ]
     volumes:
       - ./:/app
-      - ${HOME}/Webguneak/dc-data/home:/home/application
+      - ${HOME}/Dokumentuak/Packages:/packages
+      - ${HOME}/Dokumentuak/dc-data/home:/home/application
     working_dir: /app
     environment:
       WEB_DOCUMENT_ROOT: /app/public
@@ -42,7 +44,8 @@ services:
     profiles: [ "npm" ]
     volumes:
       - ./:/app
-      - ${HOME}/Webguneak/dc-data/home:/home/application
+      - ${HOME}/Dokumentuak/Packages:/packages
+      - ${HOME}/Dokumentuak/dc-data/home:/home/application
     working_dir: /app
     environment:
       WEB_DOCUMENT_ROOT: /app/public
@@ -55,7 +58,8 @@ services:
     profiles: [ "npm" ]
     volumes:
       - ./:/app
-      - ${HOME}/Webguneak/dc-data/home:/home/application
+      - ${HOME}/Dokumentuak/Packages:/packages
+      - ${HOME}/Dokumentuak/dc-data/home:/home/application
     working_dir: /app
     environment:
       WEB_DOCUMENT_ROOT: /app/public
@@ -68,7 +72,8 @@ services:
     profiles: [ "migrate" ]
     volumes:
       - ./:/app
-      - ${HOME}/Webguneak/dc-data/home:/home/application
+      - ${HOME}/Dokumentuak/Packages:/packages
+      - ${HOME}/Dokumentuak/dc-data/home:/home/application
     working_dir: /app
     environment:
       WEB_DOCUMENT_ROOT: /app/public

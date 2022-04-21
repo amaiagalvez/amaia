@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Note;
+use Amaia\Base\Models\Note;
 use App\Models\Team;
 use App\Models\User;
 use App\Models\Entity;
