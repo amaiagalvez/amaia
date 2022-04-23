@@ -47,4 +47,8 @@ Route::middleware([
     Route::get('/package', function () {
         return config('base.name') . ' ' . Calculator::add(5)->subtract(10)->getResult();
     })->name('package');
+
+    Route::get('/vue', function () {
+        return view('vue');
+    })->name('vue');
 });
