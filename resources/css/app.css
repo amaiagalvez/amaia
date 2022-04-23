@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700 &display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -7,7 +7,11 @@
 /* INFO: ezin dira sm:--- erabili */
 
 .link {
-    @apply text-white block p-5 font-bold hover: text-yellow-500;
+    @apply text-white block p-5 font-bold;
+}
+
+.link-hover {
+    @apply text-yellow-500;
 }
 
 .dot {

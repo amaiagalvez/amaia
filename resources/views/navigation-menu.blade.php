@@ -10,6 +10,11 @@ $nav_links = [
         'route' => route('tailwind'),
         'active' => request()->routeIs('tailwind') || request()->routeIs('tailwind1'),
     ],
+    [
+        'name' => __('Vue'),
+        'route' => route('vue'),
+        'active' => request()->routeIs('vue'),
+    ],
 ];
 @endphp
 
