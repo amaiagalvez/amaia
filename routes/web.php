@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -37,8 +37,12 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/tailwind', function () {
-        return view('tailwind');
+        return view('tailwind5');
     })->name('tailwind');
+
+    Route::get('/tailwind1', function () {
+        return view('tailwind1');
+    })->name('tailwind1');
 
     Route::get('/package', function () {
         return config('base.name') . ' ' . Calculator::add(5)->subtract(10)->getResult();

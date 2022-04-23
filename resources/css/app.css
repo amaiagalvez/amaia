@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900 &display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700 &display=swap');
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -6,7 +6,64 @@
 
 /* INFO: ezin dira sm:--- erabili */
 
-h1 {
+.link {
+    @apply text-white block p-5 font-bold hover: text-yellow-500;
+}
+
+.dot {
+    @apply h-3 w-3 bg-blue-600 rounded-full;
+}
+
+.button {
+    @apply my-4 inline-block py-2 px-16 bg-red-500 text-white font-black border-transparent border-8 rounded-3xl transition duration-200;
+}
+
+.button-hover {
+    @apply border-gray-200 bg-white text-black;
+}
+
+.button-xl {
+    @apply text-2xl;
+}
+
+.arrow {
+    @apply w-4 h-4 inline-block border-yellow-300 border-solid border-t-[5px] border-r-[5px] transition-all transform rotate-45;
+}
+
+.arrow-group-hover {
+    @apply border-red-500 ml-4;
+}
+
+.coin {
+    @apply w-[50px] h-[50px] w-[80px] h-[80px];
+}
+
+body {
+    @apply font-space_grotesk;
+
+}
+
+.bg-fadeIn {
+    animation: fadeIn 0.3s ease-in forwards;
+    animation-iteration-count: 1;
+}
+
+.bg-fadeOut {
+    animation: fadeOut 0.3s ease-in forwards;
+    animation-iteration-count: 1;
+}
+
+.modal-scaleIn {
+    animation: scaleIn 0.3s ease-in forwards;
+    animation-iteration-count: 1;
+}
+
+.modal-scaleOut {
+    animation: scaleOut 0.3s ease-in forwards;
+    animation-iteration-count: 1;
+}
+
+/* h1 {
     @apply font-montserrat font-bold text-6xl text-3xl;
 }
 
@@ -19,5 +76,5 @@ li {
 }
 
 .container {
-    @apply my-5;
-}
+    @apply my-5; 
+}*/
