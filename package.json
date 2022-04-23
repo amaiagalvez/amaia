@@ -18,9 +18,11 @@
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
-        "tailwindcss": "^3.0.0"
+        "tailwindcss": "^3.0.0",
+        "vue-loader": "^16.8.3"
     },
     "dependencies": {
-        "tw-elements": "^1.0.0-alpha12"
+        "tw-elements": "^1.0.0-alpha12",
+        "vue": "^3.2.31"
     }
 }

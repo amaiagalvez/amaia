@@ -17,6 +17,9 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ]);
 
+mix.js('resources/js/vue/vue.js', 'public/js/vue.js')
+    .vue();
+
 if (mix.inProduction()) {
     mix.version();
 }
