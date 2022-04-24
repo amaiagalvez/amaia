@@ -22,6 +22,8 @@
         "vue-loader": "^16.8.3"
     },
     "dependencies": {
+        "@mdi/font": "^6.6.96",
+        "@oruga-ui/oruga-next": "^0.5.5",
         "tw-elements": "^1.0.0-alpha12",
         "vue": "^3.2.31"
     }

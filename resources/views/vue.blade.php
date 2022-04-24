@@ -1,6 +1,5 @@
 <x-app-layout>
 
-
     <section id="app" class="text-gray-600 font-space_grotesk ">
 
     </section>
