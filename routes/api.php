@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\NoteController;
+use App\Http\Controllers\Api\NoteController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('notes')->controller(NoteController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::post('/store', 'store');
+});
+
+Route::prefix('users')->controller(UserController::class)->group(function () {
     Route::get('/', 'index');
 });
