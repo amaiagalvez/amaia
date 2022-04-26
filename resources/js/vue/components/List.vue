@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Listado de Notes -- {{ totalRows }} --</h1>
+    <h1 class="text-center">Listado de Notes -- {{ totalRows }} --</h1>
 
     <router-link :to="{ name: 'save' }"> Crear </router-link>
   </div>

@@ -37,8 +37,16 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/tailwind', function () {
-        return view('tailwind5');
+        return view('tailwind6_blog');
     })->name('tailwind');
+
+    Route::get('/tailwind5', function () {
+        return view('tailwind5');
+    })->name('tailwind5');
+
+    Route::get('/tailwind7', function () {
+        return view('tailwind7');
+    })->name('tailwind7');
 
     Route::get('/tailwind1', function () {
         return view('tailwind1');
