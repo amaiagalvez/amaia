@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
                     'current_team_id' => 1
                 ]
             );
-
+ 
         $team = Team::factory()->create(
             [
                 'user_id' => $user->id,
