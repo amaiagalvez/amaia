@@ -48,6 +48,10 @@ Route::middleware([
         return view('tailwind7');
     })->name('tailwind7');
 
+    Route::get('/tailwind8', function () {
+        return view('tailwind8');
+    })->name('tailwind8');
+
     Route::get('/tailwind1', function () {
         return view('tailwind1');
     })->name('tailwind1');

@@ -26,4 +26,8 @@ class NoteController extends Controller
 
         return redirect()->route('vue');
     }
+
+    public function isPositive(){
+        
+    }
 }

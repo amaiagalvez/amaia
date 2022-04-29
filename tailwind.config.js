@@ -56,9 +56,9 @@ module.exports = {
                     "100%": { transform: "scale(0)" }
                 }
             },
-            // container: {
-            //     center: true,
-            // },
+            container: {
+                center: true,
+            },
 
             fontFamily: {
                 space_grotesk: ["Space Grotesk"],
