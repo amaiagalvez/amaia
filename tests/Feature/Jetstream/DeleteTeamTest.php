@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Jetstream;
 
-use App\Models\Team;
-use App\Models\User;
+use Amaia\Base\Models\Team;
+use Amaia\Base\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Jetstream\Http\Livewire\DeleteTeamForm;
 use Livewire\Livewire;
@@ -22,11 +22,12 @@ class DeleteTeamTest extends TestCase
         ]));
 
         $team->users()->attach(
-            $otherUser = User::factory()->create(), ['role' => 'test-role']
+            $otherUser = User::factory()->create(),
+            ['role' => 'test-role']
         );
 
         $component = Livewire::test(DeleteTeamForm::class, ['team' => $team->fresh()])
-                                ->call('deleteTeam');
+            ->call('deleteTeam');
 
         $this->assertNull($team->fresh());
         $this->assertCount(0, $otherUser->fresh()->teams);
@@ -37,8 +38,8 @@ class DeleteTeamTest extends TestCase
         $this->actingAs($user = User::factory()->withPersonalTeam()->create());
 
         $component = Livewire::test(DeleteTeamForm::class, ['team' => $user->currentTeam])
-                                ->call('deleteTeam')
-                                ->assertHasErrors(['team']);
+            ->call('deleteTeam')
+            ->assertHasErrors(['team']);
 
         $this->assertNotNull($user->currentTeam->fresh());
     }

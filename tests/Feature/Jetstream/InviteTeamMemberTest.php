@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Jetstream;
 
-use App\Models\User;
+use Amaia\Base\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
 use Laravel\Jetstream\Http\Livewire\TeamMemberManager;
@@ -21,10 +21,10 @@ class InviteTeamMemberTest extends TestCase
         $this->actingAs($user = User::factory()->withPersonalTeam()->create());
 
         $component = Livewire::test(TeamMemberManager::class, ['team' => $user->currentTeam])
-                        ->set('addTeamMemberForm', [
-                            'email' => 'test@example.com',
-                            'role' => 'admin',
-                        ])->call('addTeamMember');
+            ->set('addTeamMemberForm', [
+                'email' => 'test@example.com',
+                'role' => 'admin',
+            ])->call('addTeamMember');
 
         Mail::assertSent(TeamInvitation::class);
 
@@ -39,10 +39,10 @@ class InviteTeamMemberTest extends TestCase
 
         // Add the team member...
         $component = Livewire::test(TeamMemberManager::class, ['team' => $user->currentTeam])
-                        ->set('addTeamMemberForm', [
-                            'email' => 'test@example.com',
-                            'role' => 'admin',
-                        ])->call('addTeamMember');
+            ->set('addTeamMemberForm', [
+                'email' => 'test@example.com',
+                'role' => 'admin',
+            ])->call('addTeamMember');
 
         $invitationId = $user->currentTeam->fresh()->teamInvitations->first()->id;
 

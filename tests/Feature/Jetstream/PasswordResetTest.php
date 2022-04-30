@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Jetstream;
 
-use App\Models\User;
+use Amaia\Base\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Notification;

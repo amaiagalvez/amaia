@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Jetstream;
 
-use App\Models\User;
+use Amaia\Base\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Jetstream\Http\Livewire\LogoutOtherBrowserSessionsForm;
 use Livewire\Livewire;
@@ -17,7 +17,7 @@ class BrowserSessionsTest extends TestCase
         $this->actingAs($user = User::factory()->create());
 
         Livewire::test(LogoutOtherBrowserSessionsForm::class)
-                ->set('password', 'password')
-                ->call('logoutOtherBrowserSessions');
+            ->set('password', 'password')
+            ->call('logoutOtherBrowserSessions');
     }
 }

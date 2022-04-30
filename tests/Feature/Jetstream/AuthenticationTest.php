@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Jetstream;
 
-use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Amaia\Base\Models\User;
+use Amaia\Base\BaseRouteServiceProvider;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthenticationTest extends TestCase
 {
@@ -13,6 +13,8 @@ class AuthenticationTest extends TestCase
 
     public function test_login_screen_can_be_rendered()
     {
+        $this->withoutExceptionHandling();
+
         $response = $this->get('/login');
 
         $response->assertStatus(200);
@@ -28,7 +30,7 @@ class AuthenticationTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::HOME);
+        $response->assertRedirect(BaseRouteServiceProvider::HOME);
     }
 
     public function test_users_can_not_authenticate_with_invalid_password()

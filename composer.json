@@ -1,18 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "amaiagalvez/amaia",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "amaia",
+    "keywords": ["framework", "laravel", "amaia"],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "amaiagalvez/base": "^1.0",
-        "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^9.2",
-        "laravel/jetstream": "^2.7",
-        "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7",
-        "livewire/livewire": "^2.5"
+        "amaiagalvez/base": "^1.0"        
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
@@ -33,14 +27,17 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        },
-        "files": [
-            "app/Helpers/files.php"
-        ]
+        }
     },
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "php artisan optimize",
+            "php artisan cache:clear",
+            "php artisan view:clear",
+            "php artisan config:clear",
+            "php artisan route:clear",
+            "php artisan debugbar:clear",
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [

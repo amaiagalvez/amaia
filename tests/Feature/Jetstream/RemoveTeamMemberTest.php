@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Jetstream;
 
-use App\Models\User;
+use Amaia\Base\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Jetstream\Http\Livewire\TeamMemberManager;
 use Livewire\Livewire;
@@ -17,12 +17,13 @@ class RemoveTeamMemberTest extends TestCase
         $this->actingAs($user = User::factory()->withPersonalTeam()->create());
 
         $user->currentTeam->users()->attach(
-            $otherUser = User::factory()->create(), ['role' => 'admin']
+            $otherUser = User::factory()->create(),
+            ['role' => 'admin']
         );
 
         $component = Livewire::test(TeamMemberManager::class, ['team' => $user->currentTeam])
-                        ->set('teamMemberIdBeingRemoved', $otherUser->id)
-                        ->call('removeTeamMember');
+            ->set('teamMemberIdBeingRemoved', $otherUser->id)
+            ->call('removeTeamMember');
 
         $this->assertCount(0, $user->currentTeam->fresh()->users);
     }
@@ -32,14 +33,15 @@ class RemoveTeamMemberTest extends TestCase
         $user = User::factory()->withPersonalTeam()->create();
 
         $user->currentTeam->users()->attach(
-            $otherUser = User::factory()->create(), ['role' => 'admin']
+            $otherUser = User::factory()->create(),
+            ['role' => 'admin']
         );
 
         $this->actingAs($otherUser);
 
         $component = Livewire::test(TeamMemberManager::class, ['team' => $user->currentTeam])
-                        ->set('teamMemberIdBeingRemoved', $user->id)
-                        ->call('removeTeamMember')
-                        ->assertStatus(403);
+            ->set('teamMemberIdBeingRemoved', $user->id)
+            ->call('removeTeamMember')
+            ->assertStatus(403);
     }
 }

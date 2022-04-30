@@ -56,7 +56,7 @@ return [
     |
     */
 
-    'editor' => env('DEBUGBAR_EDITOR', 'phpstorm'),
+    'editor' => env('DEBUGBAR_EDITOR', 'vscode'),
 
     /*
     |--------------------------------------------------------------------------
@@ -158,7 +158,7 @@ return [
         'db'              => true,  // Show database (PDO) queries and bindings
         'views'           => true,  // Views with their data
         'route'           => true,  // Current route information
-        'auth'            => false, // Display Laravel authentication status
+        'auth'            => true, // Display Laravel authentication status
         'gate'            => true,  // Display Laravel Gate checks
         'session'         => true,  // Display session data
         'symfony_request' => true,  // Only one can be enabled..
@@ -191,7 +191,7 @@ return [
             'with_params'       => true,   // Render SQL with the parameters substituted
             'backtrace'         => true,   // Use a backtrace to find the origin of the query in your files.
             'backtrace_exclude_paths' => [],   // Paths to exclude from backtrace. (in addition to defaults)
-            'timeline'          => false,  // Add the queries to the timeline
+            'timeline'          => true,  // Add the queries to the timeline
             'duration_background'  => true,   // Show shaded background on each query relative to how long it took to execute.
             'explain' => [                 // Show EXPLAIN output on queries
                 'enabled' => false,
