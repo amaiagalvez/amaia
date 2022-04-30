@@ -15,4 +15,5 @@ npm-debug.log
 yarn-error.log
 /.idea
 /dc-data/mysql
-txuleta.md 
+tests/Feature/base
+tests/Unit/base

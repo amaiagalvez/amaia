@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'name' => 'Base',
+    'name' => 'Base Package',
 ];
